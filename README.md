@@ -1,1 +1,1 @@
-# Rapid Trading 
+# Rapid Trading SDK for golan
