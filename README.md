@@ -1,1 +1,3 @@
-# Rapid Trading SDK for golan
+# Rapid Trading SDK for golang
+
+---
