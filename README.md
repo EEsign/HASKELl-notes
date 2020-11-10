@@ -4,4 +4,4 @@
 
 ## Usage
 
-go
+go get gith
