@@ -4,4 +4,4 @@
 
 ## Usage
 
-go get gith
+go get github.com/Liq
