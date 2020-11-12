@@ -4,4 +4,4 @@
 
 ## Usage
 
-go get github.com/Liq
+go get github.com/LiquidityT
