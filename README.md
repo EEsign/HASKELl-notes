@@ -4,4 +4,4 @@
 
 ## Usage
 
-go get github.com/LiquidityTech/rapid-tra
+go get github.com/LiquidityTech/rapid-trading-sdk-g
