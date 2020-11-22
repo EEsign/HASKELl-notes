@@ -18,4 +18,5 @@ import (
 	"github.com/LiquidityTech/rapid-trading-sdk-go"
 )
 
-fun
+func main() {
+	
