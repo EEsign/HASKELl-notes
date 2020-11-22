@@ -15,4 +15,7 @@ import (
 	"context"
 	"fmt"
 
-	"github.com/LiquidityTech/rapid-trading-sdk-
+	"github.com/LiquidityTech/rapid-trading-sdk-go"
+)
+
+fun
