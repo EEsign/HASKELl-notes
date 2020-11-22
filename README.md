@@ -15,4 +15,4 @@ import (
 	"context"
 	"fmt"
 
-	"github.com/LiquidityTech/rapid-tradin
+	"github.com/LiquidityTech/rapid-trading-sdk-
