@@ -19,4 +19,4 @@ import (
 )
 
 func main() {
-	c := rapid.N
+	c := rapid.NewClien
