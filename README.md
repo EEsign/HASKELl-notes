@@ -19,4 +19,4 @@ import (
 )
 
 func main() {
-	c := ra
+	c := rapid.N
