@@ -19,4 +19,4 @@ import (
 )
 
 func main() {
-	c := rapid.NewClient("yourKey", "your
+	c := rapid.NewClient("yourKey", "yourSec
