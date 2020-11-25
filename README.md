@@ -19,4 +19,5 @@ import (
 )
 
 func main() {
-	c := rapid.NewClient("yourKey", "yourSec
+	c := rapid.NewClient("yourKey", "yourSeccet")
+	
