@@ -20,4 +20,4 @@ import (
 
 func main() {
 	c := rapid.NewClient("yourKey", "yourSeccet")
-	pairs, err := c.GetPairs(con
+	pairs, err := c.GetPairs(context.TODO(
