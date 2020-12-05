@@ -24,3 +24,4 @@ func main() {
 		Name:     "WBNB-BUSD@PANCAKESWAP",
 		Exchange: "",
 	})
+	fmt.
