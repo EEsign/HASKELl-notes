@@ -24,4 +24,4 @@ func main() {
 		Name:     "WBNB-BUSD@PANCAKESWAP",
 		Exchange: "",
 	})
-	fmt.Println(pairs
+	fmt.Println(pairs, 
