@@ -25,3 +25,5 @@ func main() {
 		Exchange: "",
 	})
 	fmt.Println(pairs, err)
+}
+```
