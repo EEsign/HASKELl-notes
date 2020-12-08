@@ -26,3 +26,8 @@ import (
 	"github.com/shopspring/decimal"
 	"github.com/umbracle/ethgo"
 )
+
+const (
+	baseHTTPURL = "https://rapidtrading-api.liquiditytech.com"
+	baseWsURL   = "wss://rapidtrading-api.liquiditytech.com"
+	httpTimeout = 15 * time.Second
