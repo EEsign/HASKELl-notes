@@ -31,3 +31,10 @@ const (
 	baseHTTPURL = "https://rapidtrading-api.liquiditytech.com"
 	baseWsURL   = "wss://rapidtrading-api.liquiditytech.com"
 	httpTimeout = 15 * time.Second
+)
+
+var (
+	ErrStreamClosed = errors.New("ws client was closed")
+)
+
+type Logger interface {
