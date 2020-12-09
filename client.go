@@ -38,3 +38,9 @@ var (
 )
 
 type Logger interface {
+	Infof(msg string, args ...interface{})
+	Errorf(msg string, args ...interface{})
+}
+
+type CommonResp struct {
+	Code int             `json:"code"`
