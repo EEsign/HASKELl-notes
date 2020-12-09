@@ -44,3 +44,14 @@ type Logger interface {
 
 type CommonResp struct {
 	Code int             `json:"code"`
+	Msg  string          `json:"msg"`
+	Data json.RawMessage `json:"data"`
+}
+
+type Client struct {
+	APIKey      string
+	SecretKey   string
+	BaseHTTPURL string
+	BaseWsURL   string
+	HTTPClient  *http.Client
+	Debug       bool
