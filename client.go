@@ -55,3 +55,8 @@ type Client struct {
 	BaseWsURL   string
 	HTTPClient  *http.Client
 	Debug       bool
+	Logger      Logger
+
+	simplexClient *WsClient // 不涉及推送流时使用
+	simplexMutex  sync.Mutex
+}
