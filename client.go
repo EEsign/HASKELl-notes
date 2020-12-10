@@ -60,3 +60,16 @@ type Client struct {
 	simplexClient *WsClient // 不涉及推送流时使用
 	simplexMutex  sync.Mutex
 }
+
+func NewClient(apiKey, secretKey string) *Client {
+	return &Client{
+		APIKey:      apiKey,
+		SecretKey:   secretKey,
+		BaseHTTPURL: baseHTTPURL,
+		BaseWsURL:   baseWsURL,
+		HTTPClient: &http.Client{
+			Timeout: httpTimeout,
+		},
+		Logger: logImp{log.New(os.Stderr, "[FlashNet] ", log.LstdFlags|log.Lmicroseconds)},
+	}
+}
