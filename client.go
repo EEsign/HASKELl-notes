@@ -73,3 +73,9 @@ func NewClient(apiKey, secretKey string) *Client {
 		Logger: logImp{log.New(os.Stderr, "[FlashNet] ", log.LstdFlags|log.Lmicroseconds)},
 	}
 }
+
+type logImp struct {
+	stdLog *log.Logger
+}
+
+func (l logImp) Infof(msg string, data ...interface{}) {
