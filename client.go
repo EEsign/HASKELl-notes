@@ -79,3 +79,8 @@ type logImp struct {
 }
 
 func (l logImp) Infof(msg string, data ...interface{}) {
+	l.stdLog.Printf(msg, data...)
+}
+
+func (l logImp) Errorf(msg string, data ...interface{}) {
+	l.stdLog.Printf(msg, data...)
