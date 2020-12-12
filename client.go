@@ -84,3 +84,10 @@ func (l logImp) Infof(msg string, data ...interface{}) {
 
 func (l logImp) Errorf(msg string, data ...interface{}) {
 	l.stdLog.Printf(msg, data...)
+}
+
+func (c *Client) signParams(params url.Values) (sign string) {
+	if params == nil {
+		params = make(url.Values)
+	}
+	keys := make([]string, 0, len(params))
