@@ -91,3 +91,12 @@ func (c *Client) signParams(params url.Values) (sign string) {
 		params = make(url.Values)
 	}
 	keys := make([]string, 0, len(params))
+	for k := range params {
+		keys = append(keys, k)
+	}
+	sort.Strings(keys)
+	sb := strings.Builder{}
+	for _, k := range keys {
+		value := params.Get(k)
+		if value == "" {
+			continue
