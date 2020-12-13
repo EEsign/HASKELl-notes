@@ -100,3 +100,12 @@ func (c *Client) signParams(params url.Values) (sign string) {
 		value := params.Get(k)
 		if value == "" {
 			continue
+		}
+		sb.WriteString(k + "=" + value + "&")
+	}
+	payload := strings.TrimSuffix(sb.String(), "&")
+	h := hmac.New(sha256.New, []byte(c.SecretKey))
+	h.Write([]byte(payload))
+	sign = hex.EncodeToString(h.Sum(nil))
+	params.Del("apiKeyParamName")
+	return sign
