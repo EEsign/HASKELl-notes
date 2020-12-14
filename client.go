@@ -110,3 +110,12 @@ func (c *Client) signParams(params url.Values) (sign string) {
 	params.Del("apiKeyParamName")
 	return sign
 }
+
+func getTimestamp() string {
+	return time.Now().UTC().Format("2006-01-02T15:04:05")
+}
+
+func (c *Client) callAPI(ctx context.Context, method string, path string, query url.Values, body interface{}, target interface{}) (statusCode int, respBody []byte, err error) {
+	u, err := url.Parse(fmt.Sprintf("%v%v", c.BaseHTTPURL, path))
+	if err != nil {
+		return
