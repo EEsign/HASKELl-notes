@@ -119,3 +119,7 @@ func (c *Client) callAPI(ctx context.Context, method string, path string, query 
 	u, err := url.Parse(fmt.Sprintf("%v%v", c.BaseHTTPURL, path))
 	if err != nil {
 		return
+	}
+	query, bodyBytes, err := c.renderSign(query, body)
+	if err != nil {
+		return statusCode, respBody, err
