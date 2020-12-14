@@ -109,3 +109,4 @@ func (c *Client) signParams(params url.Values) (sign string) {
 	sign = hex.EncodeToString(h.Sum(nil))
 	params.Del("apiKeyParamName")
 	return sign
+}
