@@ -123,3 +123,8 @@ func (c *Client) callAPI(ctx context.Context, method string, path string, query 
 	query, bodyBytes, err := c.renderSign(query, body)
 	if err != nil {
 		return statusCode, respBody, err
+	}
+	u.RawQuery = query.Encode()
+	urlStr := u.String()
+	req, err := http.NewRequestWithContext(ctx, method, urlStr, bytes.NewReader(bodyBytes))
+	if err != nil {
