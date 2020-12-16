@@ -135,3 +135,9 @@ func (c *Client) callAPI(ctx context.Context, method string, path string, query 
 	if err != nil {
 		c.Logger.Errorf("api get error, url: %v, err: %v", urlStr, err)
 		return
+	}
+	defer resp.Body.Close()
+
+	respBody, err = io.ReadAll(resp.Body)
+	statusCode = resp.StatusCode
+	if statusCode != http.StatusOK {
