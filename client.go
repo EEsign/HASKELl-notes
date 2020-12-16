@@ -141,3 +141,8 @@ func (c *Client) callAPI(ctx context.Context, method string, path string, query 
 	respBody, err = io.ReadAll(resp.Body)
 	statusCode = resp.StatusCode
 	if statusCode != http.StatusOK {
+		err = fmt.Errorf("api get abnormal response, url: %v, code: %v, response: %v", urlStr, resp.StatusCode, string(respBody))
+		return
+	}
+	common := CommonResp{}
+	if err = json.Unmarshal(respBody, &common); err != nil {
