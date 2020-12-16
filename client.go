@@ -128,3 +128,10 @@ func (c *Client) callAPI(ctx context.Context, method string, path string, query 
 	urlStr := u.String()
 	req, err := http.NewRequestWithContext(ctx, method, urlStr, bytes.NewReader(bodyBytes))
 	if err != nil {
+		return
+	}
+	req.Header.Set("Content-Type", "application/json")
+	resp, err := c.HTTPClient.Do(req)
+	if err != nil {
+		c.Logger.Errorf("api get error, url: %v, err: %v", urlStr, err)
+		return
