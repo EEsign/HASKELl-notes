@@ -146,3 +146,13 @@ func (c *Client) callAPI(ctx context.Context, method string, path string, query 
 	}
 	common := CommonResp{}
 	if err = json.Unmarshal(respBody, &common); err != nil {
+		return
+	}
+	if common.Code != 0 {
+		err = fmt.Errorf("api data code: %v, msg: %v", common.Code, common.Msg)
+		return
+	}
+	if target != nil {
+		err = json.Unmarshal(common.Data, target)
+	}
+	return resp.StatusCode, respBody, err
