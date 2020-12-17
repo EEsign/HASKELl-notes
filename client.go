@@ -156,3 +156,11 @@ func (c *Client) callAPI(ctx context.Context, method string, path string, query 
 		err = json.Unmarshal(common.Data, target)
 	}
 	return resp.StatusCode, respBody, err
+}
+
+func (c *Client) renderSign(query url.Values, body interface{}) (newQuery url.Values, bodyBytes []byte, err error) {
+	if query == nil {
+		query = url.Values{}
+	}
+	query.Add("apiKey", c.APIKey)
+	query.Add("timestamp", getTimestamp())
