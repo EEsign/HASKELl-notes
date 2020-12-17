@@ -171,3 +171,10 @@ func (c *Client) renderSign(query url.Values, body interface{}) (newQuery url.Va
 	)
 	for k, v := range query {
 		signParams[k] = v
+	}
+	if body != nil {
+		m, err := StructToMap(body, "json")
+		if err != nil {
+			return nil, nil, err
+		}
+		for k, v := range m {
