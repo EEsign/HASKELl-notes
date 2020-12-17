@@ -164,3 +164,10 @@ func (c *Client) renderSign(query url.Values, body interface{}) (newQuery url.Va
 	}
 	query.Add("apiKey", c.APIKey)
 	query.Add("timestamp", getTimestamp())
+
+	var (
+		bodyParams = url.Values{}
+		signParams = url.Values{}
+	)
+	for k, v := range query {
+		signParams[k] = v
