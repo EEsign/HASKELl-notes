@@ -183,3 +183,8 @@ func (c *Client) renderSign(query url.Values, body interface{}) (newQuery url.Va
 		bodyBytes, err = json.Marshal(m)
 		if err != nil {
 			return nil, nil, err
+		}
+	}
+	for k, v := range bodyParams {
+		signParams[k] = v
+	}
