@@ -188,3 +188,7 @@ func (c *Client) renderSign(query url.Values, body interface{}) (newQuery url.Va
 	for k, v := range bodyParams {
 		signParams[k] = v
 	}
+	sign := c.signParams(signParams)
+	query.Add("sign", sign)
+	return query, bodyBytes, nil
+}
