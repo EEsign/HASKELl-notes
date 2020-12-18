@@ -192,3 +192,11 @@ func (c *Client) renderSign(query url.Values, body interface{}) (newQuery url.Va
 	query.Add("sign", sign)
 	return query, bodyBytes, nil
 }
+
+func (c *Client) Close() error {
+	c.simplexClient.Close()
+	return nil
+}
+
+func (c *Client) GetSimplexStream() (wsClient *WsClient, err error) {
+	if c.simplexClient != nil && !c.simplexClient.IsClosed() {
