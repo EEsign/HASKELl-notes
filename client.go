@@ -200,3 +200,7 @@ func (c *Client) Close() error {
 
 func (c *Client) GetSimplexStream() (wsClient *WsClient, err error) {
 	if c.simplexClient != nil && !c.simplexClient.IsClosed() {
+		return c.simplexClient, nil
+	}
+	c.simplexMutex.Lock()
+	defer c.simplexMutex.Unlock()
