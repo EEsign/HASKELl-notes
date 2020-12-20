@@ -204,3 +204,8 @@ func (c *Client) GetSimplexStream() (wsClient *WsClient, err error) {
 	}
 	c.simplexMutex.Lock()
 	defer c.simplexMutex.Unlock()
+
+	if c.simplexClient != nil && !c.simplexClient.IsClosed() {
+		return c.simplexClient, nil
+	}
+	wsClient, err = c.NewStream()
