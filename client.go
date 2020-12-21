@@ -209,3 +209,13 @@ func (c *Client) GetSimplexStream() (wsClient *WsClient, err error) {
 		return c.simplexClient, nil
 	}
 	wsClient, err = c.NewStream()
+	if err != nil {
+		return nil, err
+	}
+	c.simplexClient = wsClient
+	return wsClient, nil
+}
+
+func (c *Client) NewStream() (wsClient *WsClient, err error) {
+	u, err := url.Parse(c.BaseWsURL + "/ws")
+	if err != nil {
