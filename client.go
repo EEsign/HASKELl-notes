@@ -219,3 +219,10 @@ func (c *Client) GetSimplexStream() (wsClient *WsClient, err error) {
 func (c *Client) NewStream() (wsClient *WsClient, err error) {
 	u, err := url.Parse(c.BaseWsURL + "/ws")
 	if err != nil {
+		return nil, err
+	}
+	query, _, err := c.renderSign(nil, nil)
+	if err != nil {
+		return nil, err
+	}
+	u.RawQuery = query.Encode()
