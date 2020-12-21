@@ -226,3 +226,10 @@ func (c *Client) NewStream() (wsClient *WsClient, err error) {
 		return nil, err
 	}
 	u.RawQuery = query.Encode()
+	wsConn, _, err := websocket.DefaultDialer.Dial(u.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+	wsClient = NewWsClient(wsConn, c.Logger)
+	return wsClient, nil
+}
