@@ -238,3 +238,9 @@ func (c *Client) SubscribePrice(pairs []string, ch chan *PriceData) (cancel func
 	ws, err := c.NewStream()
 	if err != nil {
 		return nil, nil, err
+	}
+	errC = make(chan error)
+	go func() {
+		<-ws.Closed
+		errC <- ErrStreamClosed
+	}()
