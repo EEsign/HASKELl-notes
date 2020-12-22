@@ -244,3 +244,8 @@ func (c *Client) SubscribePrice(pairs []string, ch chan *PriceData) (cancel func
 		<-ws.Closed
 		errC <- ErrStreamClosed
 	}()
+	cancel = func() {
+		ws.Close()
+	}
+	defer func() {
+		if err != nil {
