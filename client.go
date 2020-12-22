@@ -233,3 +233,8 @@ func (c *Client) NewStream() (wsClient *WsClient, err error) {
 	wsClient = NewWsClient(wsConn, c.Logger)
 	return wsClient, nil
 }
+
+func (c *Client) SubscribePrice(pairs []string, ch chan *PriceData) (cancel func(), errC chan error, err error) {
+	ws, err := c.NewStream()
+	if err != nil {
+		return nil, nil, err
