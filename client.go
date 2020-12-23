@@ -261,3 +261,5 @@ func (c *Client) SubscribePrice(pairs []string, ch chan *PriceData) (cancel func
 
 func (c *Client) SubscribeOrderResult(ch chan *OrderResultData) (cancel func(), errC chan error, err error) {
 	ws, err := c.NewStream()
+	if err != nil {
+		return nil, nil, err
