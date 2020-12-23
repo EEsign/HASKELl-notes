@@ -257,3 +257,7 @@ func (c *Client) SubscribePrice(pairs []string, ch chan *PriceData) (cancel func
 	}
 	ws.messageHandler = genSubscribeHandler(ChannelPrice, ch)
 	return cancel, errC, nil
+}
+
+func (c *Client) SubscribeOrderResult(ch chan *OrderResultData) (cancel func(), errC chan error, err error) {
+	ws, err := c.NewStream()
