@@ -249,3 +249,11 @@ func (c *Client) SubscribePrice(pairs []string, ch chan *PriceData) (cancel func
 	}
 	defer func() {
 		if err != nil {
+			cancel()
+		}
+	}()
+	if _, err = ws.SendReqAndWait(OpSubscribe, ChannelPrice, pairs); err != nil {
+		return nil, errC, err
+	}
+	ws.messageHandler = genSubscribeHandler(ChannelPrice, ch)
+	return cancel, errC, nil
