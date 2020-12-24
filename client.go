@@ -271,3 +271,15 @@ func (c *Client) SubscribeOrderResult(ch chan *OrderResultData) (cancel func(), 
 	}()
 	cancel = func() {
 		ws.Close()
+	}
+	defer func() {
+		if err != nil {
+			cancel()
+		}
+	}()
+	if _, err = ws.SendReqAndWait(OpSubscribe, ChannelOrder, nil); err != nil {
+		return nil, errC, err
+	}
+	ws.messageHandler = genSubscribeHandler(ChannelOrder, ch)
+	return cancel, errC, nil
+}
