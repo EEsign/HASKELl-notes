@@ -263,3 +263,11 @@ func (c *Client) SubscribeOrderResult(ch chan *OrderResultData) (cancel func(), 
 	ws, err := c.NewStream()
 	if err != nil {
 		return nil, nil, err
+	}
+	errC = make(chan error)
+	go func() {
+		<-ws.Closed
+		errC <- ErrStreamClosed
+	}()
+	cancel = func() {
+		ws.Close()
