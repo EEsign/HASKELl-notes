@@ -283,3 +283,9 @@ func (c *Client) SubscribeOrderResult(ch chan *OrderResultData) (cancel func(), 
 	ws.messageHandler = genSubscribeHandler(ChannelOrder, ch)
 	return cancel, errC, nil
 }
+
+func genSubscribeHandler[T any](channel Channel, ch chan *T) MessageHandler {
+	return func(c *WsClient, resp *RespMessage) (err error) {
+		if resp.Type == MsgTypeUpdate && resp.Channel == channel {
+			data := new(T)
+			if err = json.Unmarshal(resp.Data, data); err != nil {
