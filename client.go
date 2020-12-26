@@ -289,3 +289,9 @@ func genSubscribeHandler[T any](channel Channel, ch chan *T) MessageHandler {
 		if resp.Type == MsgTypeUpdate && resp.Channel == channel {
 			data := new(T)
 			if err = json.Unmarshal(resp.Data, data); err != nil {
+				return err
+			}
+			select {
+			case ch <- data:
+			default:
+				c.Logger.Errorf("channel is overflowed, ignore new data")
