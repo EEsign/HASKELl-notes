@@ -295,3 +295,7 @@ func genSubscribeHandler[T any](channel Channel, ch chan *T) MessageHandler {
 			case ch <- data:
 			default:
 				c.Logger.Errorf("channel is overflowed, ignore new data")
+			}
+		}
+		return nil
+	}
