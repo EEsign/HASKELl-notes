@@ -311,3 +311,8 @@ type CreateOrderReq struct {
 	GasPriceMax       string `json:"gasPriceMax"`
 	TraceTime         string `json:"traceTime"`
 	TargetBlockNumber uint64 `json:"targetBlockNumber"`
+}
+
+type CreateOrderResp struct {
+	Id uint64 `json:"id"`
+}
