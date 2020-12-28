@@ -299,3 +299,12 @@ func genSubscribeHandler[T any](channel Channel, ch chan *T) MessageHandler {
 		}
 		return nil
 	}
+}
+
+type CreateOrderReq struct {
+	Pair              string `json:"pair"`
+	Type              string `json:"type"`
+	TokenSymbolIn     string `json:"tokenSymbolIn"`
+	AmountIn          string `json:"amountIn"`
+	AmountOutMin      string `json:"amountOutMin"`
+	GasPrice          string `json:"gasPrice"`
