@@ -321,3 +321,8 @@ func (c *Client) CreateOrder(ctx context.Context, req CreateOrderReq) (resp *Cre
 	resp = &CreateOrderResp{}
 	_, _, err = c.callAPI(ctx, http.MethodPost, "/api/v1/orders", nil, req, resp)
 	return resp, err
+}
+
+func (c *Client) CreateOrderByStream(req CreateOrderReq) (resp *CreateOrderResp, err error) {
+	ws, err := c.GetSimplexStream()
+	if err != nil {
