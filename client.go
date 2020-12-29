@@ -316,3 +316,8 @@ type CreateOrderReq struct {
 type CreateOrderResp struct {
 	Id uint64 `json:"id"`
 }
+
+func (c *Client) CreateOrder(ctx context.Context, req CreateOrderReq) (resp *CreateOrderResp, err error) {
+	resp = &CreateOrderResp{}
+	_, _, err = c.callAPI(ctx, http.MethodPost, "/api/v1/orders", nil, req, resp)
+	return resp, err
