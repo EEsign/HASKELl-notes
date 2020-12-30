@@ -336,3 +336,8 @@ func (c *Client) CreateOrderByStream(req CreateOrderReq) (resp *CreateOrderResp,
 	err = json.Unmarshal(confirm.Data, resp)
 	return resp, err
 }
+
+type (
+	Network  string
+	Exchange string
+)
