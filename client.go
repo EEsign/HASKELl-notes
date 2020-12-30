@@ -326,3 +326,13 @@ func (c *Client) CreateOrder(ctx context.Context, req CreateOrderReq) (resp *Cre
 func (c *Client) CreateOrderByStream(req CreateOrderReq) (resp *CreateOrderResp, err error) {
 	ws, err := c.GetSimplexStream()
 	if err != nil {
+		return nil, err
+	}
+	confirm, err := ws.SendReqAndWait(OpOrder, ChannelOrder, req)
+	if err != nil {
+		return nil, err
+	}
+	resp = &CreateOrderResp{}
+	err = json.Unmarshal(confirm.Data, resp)
+	return resp, err
+}
