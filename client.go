@@ -348,3 +348,8 @@ const (
 
 	ExchangePancakeSwap Exchange = "PANCAKESWAP"
 	ExchangeBiswap      Exchange = "BISWAP"
+)
+
+type GetPairsReq struct {
+	Name     string
+	Exchange Exchange
