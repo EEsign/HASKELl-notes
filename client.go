@@ -357,3 +357,11 @@ type GetPairsReq struct {
 
 type Pair struct {
 	Id         uint64          `json:"id"`
+	Name       string          `json:"name"` // BTC-USDT@BISWAP
+	Addr       ethgo.Address   `json:"addr"`
+	Network    Network         `json:"network"`
+	Exchange   Exchange        `json:"exchange"`
+	Fee        decimal.Decimal `json:"fee"`
+	Token0Addr ethgo.Address   `json:"token0Addr"`
+	Token1Addr ethgo.Address   `json:"token1Addr"`
+	Token0     Token           `json:"token0"`
