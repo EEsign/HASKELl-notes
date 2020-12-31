@@ -353,3 +353,7 @@ const (
 type GetPairsReq struct {
 	Name     string
 	Exchange Exchange
+}
+
+type Pair struct {
+	Id         uint64          `json:"id"`
