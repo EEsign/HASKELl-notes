@@ -341,3 +341,10 @@ type (
 	Network  string
 	Exchange string
 )
+
+const (
+	NetworkBSC Network = "BSC"
+	NetworkETH Network = "ETH"
+
+	ExchangePancakeSwap Exchange = "PANCAKESWAP"
+	ExchangeBiswap      Exchange = "BISWAP"
