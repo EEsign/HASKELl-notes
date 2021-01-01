@@ -365,3 +365,10 @@ type Pair struct {
 	Token0Addr ethgo.Address   `json:"token0Addr"`
 	Token1Addr ethgo.Address   `json:"token1Addr"`
 	Token0     Token           `json:"token0"`
+	Token1     Token           `json:"token1"`
+}
+
+type Token struct {
+	Id       uint64        `json:"id"`
+	Addr     ethgo.Address `json:"addr"`
+	Name     string        `json:"name"`
