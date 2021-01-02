@@ -372,3 +372,6 @@ type Token struct {
 	Id       uint64        `json:"id"`
 	Addr     ethgo.Address `json:"addr"`
 	Name     string        `json:"name"`
+	Symbol   string        `json:"symbol"`
+	Decimals uint8         `json:"decimals"`
+}
