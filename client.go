@@ -375,3 +375,11 @@ type Token struct {
 	Symbol   string        `json:"symbol"`
 	Decimals uint8         `json:"decimals"`
 }
+
+func (c *Client) GetPairs(ctx context.Context, req GetPairsReq) (pairs []*Pair, err error) {
+	pairs = make([]*Pair, 0)
+	q := url.Values{}
+	if req.Name != "" {
+		q.Set("name", req.Name)
+	}
+	if req.Exchange != "" {
