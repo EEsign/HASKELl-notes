@@ -383,3 +383,12 @@ func (c *Client) GetPairs(ctx context.Context, req GetPairsReq) (pairs []*Pair, 
 		q.Set("name", req.Name)
 	}
 	if req.Exchange != "" {
+		q.Set("exchange", string(req.Exchange))
+	}
+	_, _, err = c.callAPI(ctx, http.MethodGet, "/api/v1/pairs", q, nil, &pairs)
+	return pairs, err
+}
+
+type OrderResult struct {
+	Id            uint64          `json:"id"` // 任务id
+	Pair          string          `json:"pair"`
