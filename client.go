@@ -399,3 +399,9 @@ type OrderResult struct {
 	GasFee        decimal.Decimal `json:"gasFee"`
 	Hash          string          `json:"hash"`
 }
+
+func (c *Client) GetOrderResult(ctx context.Context, orderId uint64) (result *OrderResult, err error) {
+	path := fmt.Sprintf("/api/v1/orders/%s/result", strconv.FormatUint(orderId, 10))
+	result = new(OrderResult)
+	_, _, err = c.callAPI(ctx, http.MethodGet, path, nil, nil, result)
+	if err != nil {
