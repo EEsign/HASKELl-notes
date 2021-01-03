@@ -392,3 +392,10 @@ func (c *Client) GetPairs(ctx context.Context, req GetPairsReq) (pairs []*Pair, 
 type OrderResult struct {
 	Id            uint64          `json:"id"` // 任务id
 	Pair          string          `json:"pair"`
+	TokenSymbolIn string          `json:"tokenSymbolIn"`
+	Success       bool            `json:"success"`
+	AmountIn      decimal.Decimal `json:"amountIn"`
+	AmountOut     decimal.Decimal `json:"amountOut"`
+	GasFee        decimal.Decimal `json:"gasFee"`
+	Hash          string          `json:"hash"`
+}
