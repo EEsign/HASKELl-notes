@@ -405,3 +405,12 @@ func (c *Client) GetOrderResult(ctx context.Context, orderId uint64) (result *Or
 	result = new(OrderResult)
 	_, _, err = c.callAPI(ctx, http.MethodGet, path, nil, nil, result)
 	if err != nil {
+		return nil, err
+	}
+	return result, nil
+}
+
+type GetTokenBalancesReq struct {
+	Account string
+	Tokens  []string
+}
