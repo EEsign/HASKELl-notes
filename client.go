@@ -414,3 +414,10 @@ type GetTokenBalancesReq struct {
 	Account string
 	Tokens  []string
 }
+
+type TokenBalances map[ethgo.Address]decimal.Decimal
+
+func (c *Client) GetTokenBalances(ctx context.Context, req GetTokenBalancesReq) (balances TokenBalances, err error) {
+	balances = make(TokenBalances)
+	q := url.Values{}
+	q.Set("account", req.Account)
