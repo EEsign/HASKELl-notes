@@ -421,3 +421,11 @@ func (c *Client) GetTokenBalances(ctx context.Context, req GetTokenBalancesReq) 
 	balances = make(TokenBalances)
 	q := url.Values{}
 	q.Set("account", req.Account)
+	q.Set("tokens", strings.Join(req.Tokens, ","))
+	_, _, err = c.callAPI(ctx, http.MethodGet, "/api/v1/chain/token-balances", q, nil, &balances)
+	return balances, err
+}
+
+// StructToMap convert struct to map[string]interface{}
+func StructToMap(in interface{}, tagName string) (m map[string]interface{}, err error) {
+	m = make(map[string]interface{})
