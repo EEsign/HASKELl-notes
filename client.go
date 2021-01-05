@@ -429,3 +429,11 @@ func (c *Client) GetTokenBalances(ctx context.Context, req GetTokenBalancesReq) 
 // StructToMap convert struct to map[string]interface{}
 func StructToMap(in interface{}, tagName string) (m map[string]interface{}, err error) {
 	m = make(map[string]interface{})
+
+	v := reflect.ValueOf(in)
+	if v.Kind() == reflect.Ptr {
+		v = v.Elem()
+	}
+
+	if v.Kind() != reflect.Struct {
+		return nil, fmt.Errorf("StructToMap only accepts struct or struct pointer; got %T", v)
