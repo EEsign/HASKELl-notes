@@ -444,3 +444,7 @@ func StructToMap(in interface{}, tagName string) (m map[string]interface{}, err 
 		fi := t.Field(i)
 		if tagValue := fi.Tag.Get(tagName); tagValue != "" {
 			m[tagValue] = v.Field(i).Interface()
+		}
+	}
+	return m, nil
+}
