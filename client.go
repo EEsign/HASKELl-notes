@@ -437,3 +437,10 @@ func StructToMap(in interface{}, tagName string) (m map[string]interface{}, err 
 
 	if v.Kind() != reflect.Struct {
 		return nil, fmt.Errorf("StructToMap only accepts struct or struct pointer; got %T", v)
+	}
+
+	t := v.Type()
+	for i := 0; i < v.NumField(); i++ {
+		fi := t.Field(i)
+		if tagValue := fi.Tag.Get(tagName); tagValue != "" {
+			m[tagValue] = v.Field(i).Interface()
