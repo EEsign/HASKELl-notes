@@ -1,1 +1,1 @@
-package r
+package rapid
