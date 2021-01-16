@@ -12,4 +12,5 @@ import (
 
 var (
 	ctx       = context.TODO()
-	apiKey    = "api
+	apiKey    = "apiKey"
+	api
