@@ -13,4 +13,4 @@ import (
 var (
 	ctx       = context.TODO()
 	apiKey    = "apiKey"
-	apiSecret = "ap
+	apiSecret = "apiS
