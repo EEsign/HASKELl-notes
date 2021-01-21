@@ -14,4 +14,4 @@ var (
 	ctx       = context.TODO()
 	apiKey    = "apiKey"
 	apiSecret = "apiSecret"
-	pairs     = []string{"WBNB-BUSD@
+	pairs     = []string{"WBNB-BUSD@PANCAKESWAP"
