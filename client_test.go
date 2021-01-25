@@ -15,4 +15,4 @@ var (
 	apiKey    = "apiKey"
 	apiSecret = "apiSecret"
 	pairs     = []string{"WBNB-BUSD@PANCAKESWAP", "WBNB-USDT@PANCAKESWAP"}
-	
+	c    
