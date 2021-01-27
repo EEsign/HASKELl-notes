@@ -15,4 +15,7 @@ var (
 	apiKey    = "apiKey"
 	apiSecret = "apiSecret"
 	pairs     = []string{"WBNB-BUSD@PANCAKESWAP", "WBNB-USDT@PANCAKESWAP"}
-	c         = NewClient(apiKey, apiSe
+	c         = NewClient(apiKey, apiSecret)
+)
+
+fun
