@@ -18,4 +18,4 @@ var (
 	c         = NewClient(apiKey, apiSecret)
 )
 
-func Test
+func TestMain(m
