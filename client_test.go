@@ -19,4 +19,4 @@ var (
 )
 
 func TestMain(m *testing.M) {
-	s
+	setup(
