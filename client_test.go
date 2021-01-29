@@ -19,4 +19,5 @@ var (
 )
 
 func TestMain(m *testing.M) {
-	setup(
+	setup()
+	cod
