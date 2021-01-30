@@ -21,4 +21,5 @@ var (
 func TestMain(m *testing.M) {
 	setup()
 	code := m.Run()
+	teardown()
 	
