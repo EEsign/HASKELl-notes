@@ -20,4 +20,5 @@ var (
 
 func TestMain(m *testing.M) {
 	setup()
-	cod
+	code := m.Run()
+	
