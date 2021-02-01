@@ -25,4 +25,5 @@ func TestMain(m *testing.M) {
 	os.Exit(code)
 }
 
-func setu
+func setup() {
+}
