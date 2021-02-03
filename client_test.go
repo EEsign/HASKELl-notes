@@ -28,4 +28,5 @@ func TestMain(m *testing.M) {
 func setup() {
 }
 
-func teardown()
+func teardown() {
+}
