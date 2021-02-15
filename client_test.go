@@ -31,4 +31,4 @@ func setup() {
 func teardown() {
 }
 
-func TestNewClient
+func TestNewClient(t *tes
