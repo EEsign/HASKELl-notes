@@ -31,4 +31,4 @@ func setup() {
 func teardown() {
 }
 
-func 
+func TestNew
