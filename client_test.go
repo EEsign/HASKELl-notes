@@ -32,4 +32,4 @@ func teardown() {
 }
 
 func TestNewClient(t *testing.T) {
-	ws, 
+	ws, err := 
