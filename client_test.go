@@ -32,4 +32,5 @@ func teardown() {
 }
 
 func TestNewClient(t *testing.T) {
-	ws, err := c.NewStream
+	ws, err := c.NewStream()
+	as
