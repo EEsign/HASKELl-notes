@@ -33,4 +33,5 @@ func teardown() {
 
 func TestNewClient(t *testing.T) {
 	ws, err := c.NewStream()
-	assert.NoError(t, er
+	assert.NoError(t, err)
+	assert
