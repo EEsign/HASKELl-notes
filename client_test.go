@@ -36,3 +36,5 @@ func TestNewClient(t *testing.T) {
 	assert.NoError(t, err)
 	assert.False(t, ws.IsClosed())
 }
+
+fu
