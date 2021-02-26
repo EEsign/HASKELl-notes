@@ -38,4 +38,4 @@ func TestNewClient(t *testing.T) {
 }
 
 func TestClient_SubscribePrice(t *testing.T) {
-	c
+	ch := mak
