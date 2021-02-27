@@ -39,3 +39,4 @@ func TestNewClient(t *testing.T) {
 
 func TestClient_SubscribePrice(t *testing.T) {
 	ch := make(chan *PriceData, 20)
+	cancel, errC
