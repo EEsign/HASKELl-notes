@@ -42,4 +42,4 @@ func TestClient_SubscribePrice(t *testing.T) {
 	cancel, errC, err := c.SubscribePrice(pairs, ch)
 	defer cancel()
 	assert.NoError(t, err)
-	
+	count
