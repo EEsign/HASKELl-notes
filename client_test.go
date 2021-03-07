@@ -43,4 +43,4 @@ func TestClient_SubscribePrice(t *testing.T) {
 	defer cancel()
 	assert.NoError(t, err)
 	count := 0
-	notify := make(chan stru
+	notify := make(chan struct{})
