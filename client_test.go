@@ -45,4 +45,4 @@ func TestClient_SubscribePrice(t *testing.T) {
 	count := 0
 	notify := make(chan struct{})
 	go func() {
-		for price := range
+		for price := range ch {
