@@ -46,3 +46,4 @@ func TestClient_SubscribePrice(t *testing.T) {
 	notify := make(chan struct{})
 	go func() {
 		for price := range ch {
+			found 
