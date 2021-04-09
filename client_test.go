@@ -49,4 +49,5 @@ func TestClient_SubscribePrice(t *testing.T) {
 			found := false
 			t.Logf("%#v", *price)
 			for _, pair := range pairs {
-				if price.Pair == pair
+				if price.Pair == pair {
+				
