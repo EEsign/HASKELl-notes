@@ -51,4 +51,4 @@ func TestClient_SubscribePrice(t *testing.T) {
 			for _, pair := range pairs {
 				if price.Pair == pair {
 					found = true
-	
+				
