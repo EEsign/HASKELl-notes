@@ -52,4 +52,5 @@ func TestClient_SubscribePrice(t *testing.T) {
 				if price.Pair == pair {
 					found = true
 					count++
-					b
+					break
+				
