@@ -54,3 +54,5 @@ func TestClient_SubscribePrice(t *testing.T) {
 					count++
 					break
 				}
+			}
+		
