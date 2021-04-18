@@ -53,4 +53,4 @@ func TestClient_SubscribePrice(t *testing.T) {
 					found = true
 					count++
 					break
-				
+				}
