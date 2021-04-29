@@ -55,4 +55,4 @@ func TestClient_SubscribePrice(t *testing.T) {
 					break
 				}
 			}
-			assert.Tru
+			assert.True(t, foun
