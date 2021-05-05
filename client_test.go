@@ -58,4 +58,4 @@ func TestClient_SubscribePrice(t *testing.T) {
 			assert.True(t, found)
 			if count >= 10 {
 				close(notify)
-			
+				break
