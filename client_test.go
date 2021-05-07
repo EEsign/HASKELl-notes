@@ -61,3 +61,5 @@ func TestClient_SubscribePrice(t *testing.T) {
 				break
 			}
 		}
+	}()
+
