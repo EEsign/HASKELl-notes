@@ -65,4 +65,4 @@ func TestClient_SubscribePrice(t *testing.T) {
 
 	select {
 	case <-notify:
-	case <-time.After(2
+	case <-time.After(20 * time.Seco
