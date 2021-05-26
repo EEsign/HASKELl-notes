@@ -69,3 +69,4 @@ func TestClient_SubscribePrice(t *testing.T) {
 		assert.Errorf(t, assert.AnError, "timeout")
 	case err := <-errC:
 		t.Log(err)
+		panic(
