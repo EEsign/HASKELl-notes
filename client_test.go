@@ -68,4 +68,4 @@ func TestClient_SubscribePrice(t *testing.T) {
 	case <-time.After(20 * time.Second):
 		assert.Errorf(t, assert.AnError, "timeout")
 	case err := <-errC:
-		t.Log
+		t.Log(err)
