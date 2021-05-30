@@ -70,3 +70,5 @@ func TestClient_SubscribePrice(t *testing.T) {
 	case err := <-errC:
 		t.Log(err)
 		panic(err)
+	}
+	
