@@ -71,4 +71,4 @@ func TestClient_SubscribePrice(t *testing.T) {
 		t.Log(err)
 		panic(err)
 	}
-	
+	cancel
