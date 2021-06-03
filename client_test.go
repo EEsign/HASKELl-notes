@@ -72,4 +72,4 @@ func TestClient_SubscribePrice(t *testing.T) {
 		panic(err)
 	}
 	cancel()
-	time.S
+	time.Sleep(2 *
