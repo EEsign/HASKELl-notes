@@ -73,3 +73,4 @@ func TestClient_SubscribePrice(t *testing.T) {
 	}
 	cancel()
 	time.Sleep(2 * time.Second)
+	sele
