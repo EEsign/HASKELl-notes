@@ -75,4 +75,4 @@ func TestClient_SubscribePrice(t *testing.T) {
 	time.Sleep(2 * time.Second)
 	select {
 	case err = <-errC:
-	de
+	default:
