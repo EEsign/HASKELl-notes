@@ -76,3 +76,5 @@ func TestClient_SubscribePrice(t *testing.T) {
 	select {
 	case err = <-errC:
 	default:
+	}
+	asser
