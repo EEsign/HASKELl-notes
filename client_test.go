@@ -77,4 +77,4 @@ func TestClient_SubscribePrice(t *testing.T) {
 	case err = <-errC:
 	default:
 	}
-	assert.ErrorIs(t, 
+	assert.ErrorIs(t, err, ErrS
