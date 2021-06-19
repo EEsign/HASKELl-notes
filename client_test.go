@@ -78,4 +78,4 @@ func TestClient_SubscribePrice(t *testing.T) {
 	default:
 	}
 	assert.ErrorIs(t, err, ErrStreamClosed)
-	
+	t.Log(er
