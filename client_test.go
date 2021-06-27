@@ -81,4 +81,4 @@ func TestClient_SubscribePrice(t *testing.T) {
 	t.Log(err)
 }
 
-func TestClient_SubscribeOrderR
+func TestClient_SubscribeOrderResul
