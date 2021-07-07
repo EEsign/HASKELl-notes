@@ -82,4 +82,4 @@ func TestClient_SubscribePrice(t *testing.T) {
 }
 
 func TestClient_SubscribeOrderResult(t *testing.T) {
-	ch := make(chan *Orde
+	ch := make(chan *OrderResultD
