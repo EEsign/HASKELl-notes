@@ -84,4 +84,4 @@ func TestClient_SubscribePrice(t *testing.T) {
 func TestClient_SubscribeOrderResult(t *testing.T) {
 	ch := make(chan *OrderResultData, 20)
 	cancel, _, err := c.SubscribeOrderResult(ch)
-	defer ca
+	defer cancel
