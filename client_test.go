@@ -86,3 +86,6 @@ func TestClient_SubscribeOrderResult(t *testing.T) {
 	cancel, _, err := c.SubscribeOrderResult(ch)
 	defer cancel()
 	assert.NoError(t, err)
+}
+
+fu
