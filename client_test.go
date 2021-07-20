@@ -85,4 +85,4 @@ func TestClient_SubscribeOrderResult(t *testing.T) {
 	ch := make(chan *OrderResultData, 20)
 	cancel, _, err := c.SubscribeOrderResult(ch)
 	defer cancel()
-	assert.NoError(t
+	assert.NoError(t, err)
