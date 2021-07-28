@@ -88,4 +88,4 @@ func TestClient_SubscribeOrderResult(t *testing.T) {
 	assert.NoError(t, err)
 }
 
-func TestClient_C
+func TestClient_CreateOrd
