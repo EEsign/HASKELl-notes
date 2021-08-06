@@ -90,4 +90,4 @@ func TestClient_SubscribeOrderResult(t *testing.T) {
 
 func TestClient_CreateOrder(t *testing.T) {
 	req := CreateOrderReq{
-		Pair:              "UNI-BUSD
+		Pair:              "UNI-BUSD@MDEX"
