@@ -92,4 +92,5 @@ func TestClient_CreateOrder(t *testing.T) {
 	req := CreateOrderReq{
 		Pair:              "UNI-BUSD@MDEX",
 		Type:              "pga",
-		TokenSymbolIn:     "BUSD
+		TokenSymbolIn:     "BUSD",
+		Amoun
