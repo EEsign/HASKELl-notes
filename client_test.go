@@ -94,4 +94,4 @@ func TestClient_CreateOrder(t *testing.T) {
 		Type:              "pga",
 		TokenSymbolIn:     "BUSD",
 		AmountIn:          "2975000000000000000",
-		Am
+		AmountOu
