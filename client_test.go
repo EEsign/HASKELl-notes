@@ -93,4 +93,5 @@ func TestClient_CreateOrder(t *testing.T) {
 		Pair:              "UNI-BUSD@MDEX",
 		Type:              "pga",
 		TokenSymbolIn:     "BUSD",
-		AmountIn:          "29750000000000
+		AmountIn:          "2975000000000000000",
+		Am
