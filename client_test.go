@@ -95,4 +95,4 @@ func TestClient_CreateOrder(t *testing.T) {
 		TokenSymbolIn:     "BUSD",
 		AmountIn:          "2975000000000000000",
 		AmountOutMin:      "0.001",
-		GasPriceMax:       "900
+		GasPriceMax:       "90000000000
