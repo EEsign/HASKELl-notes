@@ -96,4 +96,4 @@ func TestClient_CreateOrder(t *testing.T) {
 		AmountIn:          "2975000000000000000",
 		AmountOutMin:      "0.001",
 		GasPriceMax:       "90000000000",
-		TraceTime:         st
+		TraceTime:         strcon
