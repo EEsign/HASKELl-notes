@@ -97,4 +97,4 @@ func TestClient_CreateOrder(t *testing.T) {
 		AmountOutMin:      "0.001",
 		GasPriceMax:       "90000000000",
 		TraceTime:         strconv.FormatInt(time.Now().UnixNano(), 10),
-		TargetBlockNumber: 22534
+		TargetBlockNumber: 22534222,
