@@ -99,4 +99,4 @@ func TestClient_CreateOrder(t *testing.T) {
 		TraceTime:         strconv.FormatInt(time.Now().UnixNano(), 10),
 		TargetBlockNumber: 22534222,
 	}
-	resp, err := c.CreateOrder(ct
+	resp, err := c.CreateOrder(ctx, req)
