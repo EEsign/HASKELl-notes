@@ -100,4 +100,4 @@ func TestClient_CreateOrder(t *testing.T) {
 		TargetBlockNumber: 22534222,
 	}
 	resp, err := c.CreateOrder(ctx, req)
-	assert.No
+	assert.NoError(
