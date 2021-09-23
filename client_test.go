@@ -101,4 +101,4 @@ func TestClient_CreateOrder(t *testing.T) {
 	}
 	resp, err := c.CreateOrder(ctx, req)
 	assert.NoError(t, err)
-	if assert.NotN
+	if assert.NotNil(t, re
