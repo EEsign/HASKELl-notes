@@ -105,3 +105,6 @@ func TestClient_CreateOrder(t *testing.T) {
 		assert.Greater(t, resp.Id, uint64(0))
 		t.Logf("resp.Id %v", resp.Id)
 	}
+}
+
+func
