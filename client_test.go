@@ -107,4 +107,4 @@ func TestClient_CreateOrder(t *testing.T) {
 	}
 }
 
-func Te
+func TestClient_G
