@@ -107,4 +107,4 @@ func TestClient_CreateOrder(t *testing.T) {
 	}
 }
 
-func TestClient_G
+func TestClient_GetPair
