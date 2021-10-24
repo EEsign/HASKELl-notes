@@ -109,4 +109,4 @@ func TestClient_CreateOrder(t *testing.T) {
 
 func TestClient_GetPairs(t *testing.T) {
 	req := GetPairsReq{
-		Name:     "WBNB-BUSD@PANCAK
+		Name:     "WBNB-BUSD@PANCAKESWAP",
