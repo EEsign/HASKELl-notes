@@ -113,4 +113,4 @@ func TestClient_GetPairs(t *testing.T) {
 		Exchange: ExchangePancakeSwap,
 	}
 	pairs, err := c.GetPairs(ctx, req)
-	as
+	assert.N
