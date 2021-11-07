@@ -112,4 +112,5 @@ func TestClient_GetPairs(t *testing.T) {
 		Name:     "WBNB-BUSD@PANCAKESWAP",
 		Exchange: ExchangePancakeSwap,
 	}
-	pairs, err := c.GetPairs(ctx,
+	pairs, err := c.GetPairs(ctx, req)
+	as
