@@ -116,3 +116,6 @@ func TestClient_GetPairs(t *testing.T) {
 	assert.NoError(t, err)
 	assert.Len(t, pairs, 1)
 	t.Log(pairs[0])
+}
+
+fu
