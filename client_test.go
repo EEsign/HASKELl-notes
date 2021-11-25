@@ -118,4 +118,4 @@ func TestClient_GetPairs(t *testing.T) {
 	t.Log(pairs[0])
 }
 
-func TestClient_CreateOrderByStrea
+func TestClient_CreateOrderByStream(t *test
