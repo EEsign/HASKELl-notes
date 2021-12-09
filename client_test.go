@@ -120,4 +120,4 @@ func TestClient_GetPairs(t *testing.T) {
 
 func TestClient_CreateOrderByStream(t *testing.T) {
 	req := CreateOrderReq{
-		Pair:              "WBNB-BUSD@
+		Pair:              "WBNB-BUSD@PANCAK
