@@ -122,4 +122,5 @@ func TestClient_CreateOrderByStream(t *testing.T) {
 	req := CreateOrderReq{
 		Pair:              "WBNB-BUSD@PANCAKESWAP",
 		Type:              "pga",
-		TokenSymbolIn:     "
+		TokenSymbolIn:     "WBNB",
+		A
