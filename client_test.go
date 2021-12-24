@@ -123,4 +123,4 @@ func TestClient_CreateOrderByStream(t *testing.T) {
 		Pair:              "WBNB-BUSD@PANCAKESWAP",
 		Type:              "pga",
 		TokenSymbolIn:     "WBNB",
-		AmountIn:      
+		AmountIn:         
