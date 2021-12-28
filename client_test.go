@@ -124,4 +124,4 @@ func TestClient_CreateOrderByStream(t *testing.T) {
 		Type:              "pga",
 		TokenSymbolIn:     "WBNB",
 		AmountIn:          "0.1",
-		AmountOutMin:  
+		AmountOutMin:      "1
