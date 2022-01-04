@@ -125,4 +125,4 @@ func TestClient_CreateOrderByStream(t *testing.T) {
 		TokenSymbolIn:     "WBNB",
 		AmountIn:          "0.1",
 		AmountOutMin:      "10",
-		GasPric
+		GasPriceMax:    
