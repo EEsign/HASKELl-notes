@@ -126,4 +126,4 @@ func TestClient_CreateOrderByStream(t *testing.T) {
 		AmountIn:          "0.1",
 		AmountOutMin:      "10",
 		GasPriceMax:       "90000000000",
-		TargetBlockN
+		TargetBlockNumber: 
