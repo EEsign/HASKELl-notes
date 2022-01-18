@@ -128,4 +128,4 @@ func TestClient_CreateOrderByStream(t *testing.T) {
 		GasPriceMax:       "90000000000",
 		TargetBlockNumber: 21675044,
 	}
-	resp, err := c.CreateOrderByS
+	resp, err := c.CreateOrderByStream(
