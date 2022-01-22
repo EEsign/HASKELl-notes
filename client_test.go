@@ -129,4 +129,4 @@ func TestClient_CreateOrderByStream(t *testing.T) {
 		TargetBlockNumber: 21675044,
 	}
 	resp, err := c.CreateOrderByStream(req)
-	assert.NoEr
+	assert.NoError(
