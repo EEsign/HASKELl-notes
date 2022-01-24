@@ -131,4 +131,4 @@ func TestClient_CreateOrderByStream(t *testing.T) {
 	resp, err := c.CreateOrderByStream(req)
 	assert.NoError(t, err)
 	if assert.NotNil(t, resp) {
-		assert.Greater(t, resp.Id, uint64
+		assert.Greater(t, resp.Id, uint64(0)
