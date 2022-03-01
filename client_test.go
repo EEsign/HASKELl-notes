@@ -136,4 +136,4 @@ func TestClient_CreateOrderByStream(t *testing.T) {
 	}
 }
 
-func Test
+func TestClient_Ge
