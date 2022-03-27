@@ -137,4 +137,4 @@ func TestClient_CreateOrderByStream(t *testing.T) {
 }
 
 func TestClient_GetOrderResult(t *testing.T) {
-	result, err := 
+	result, err := c.GetOrde
