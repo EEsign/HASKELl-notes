@@ -138,3 +138,4 @@ func TestClient_CreateOrderByStream(t *testing.T) {
 
 func TestClient_GetOrderResult(t *testing.T) {
 	result, err := c.GetOrderResult(ctx, 7042433021000)
+	ass
