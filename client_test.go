@@ -143,4 +143,4 @@ func TestClient_GetOrderResult(t *testing.T) {
 }
 
 func TestClient_GetTokenBalances(t *testing.T) {
-	req := GetTokenB
+	req := GetTokenBalances
