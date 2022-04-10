@@ -142,4 +142,4 @@ func TestClient_GetOrderResult(t *testing.T) {
 	t.Log(result)
 }
 
-func TestClient_
+func TestClient_Get
