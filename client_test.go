@@ -144,4 +144,4 @@ func TestClient_GetOrderResult(t *testing.T) {
 
 func TestClient_GetTokenBalances(t *testing.T) {
 	req := GetTokenBalancesReq{
-		Account: "0xbe807ddd
+		Account: "0xbe807dddb074639cd
