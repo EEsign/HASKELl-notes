@@ -145,4 +145,4 @@ func TestClient_GetOrderResult(t *testing.T) {
 func TestClient_GetTokenBalances(t *testing.T) {
 	req := GetTokenBalancesReq{
 		Account: "0xbe807dddb074639cd9fa61b47676c064fc50d62c",
-		Tokens:  []string{"0x7130d2A12B9BCbFAe4f2634d864A1Ee1Ce3Ead9c", "0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56"
+		Tokens:  []string{"0x7130d2A12B9BCbFAe4f2634d864A1Ee1Ce3Ead9c", "0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56", "0x55
