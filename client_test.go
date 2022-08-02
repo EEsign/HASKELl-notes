@@ -149,4 +149,4 @@ func TestClient_GetTokenBalances(t *testing.T) {
 	}
 	balances, err := c.GetTokenBalances(ctx, req)
 	assert.NoError(t, err)
-	assert.Len(t, bala
+	assert.Len(t, balances, le
