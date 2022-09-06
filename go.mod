@@ -1,1 +1,1 @@
-module github.com/LiquidityTech
+module github.com/LiquidityTech/rapid
