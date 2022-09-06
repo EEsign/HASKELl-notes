@@ -1,1 +1,1 @@
-module github.com/LiquidityTech/rapid
+module github.com/LiquidityTech/rapid-trading
