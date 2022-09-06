@@ -1,1 +1,1 @@
-module github.com/LiquidityTech/rapid-trading
+module github.com/LiquidityTech/rapid-trading-sdk-go
