@@ -4,4 +4,4 @@ go 1.18
 
 require (
 	github.com/gorilla/websocket v1.5.0
-	github.com/shopspring/decima
+	github.com/shopspring/decimal v1.
