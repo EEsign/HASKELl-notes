@@ -9,3 +9,4 @@ require (
 	github.com/umbracle/ethgo v0.1.3
 )
 
+require (
