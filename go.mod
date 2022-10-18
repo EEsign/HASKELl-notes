@@ -10,4 +10,4 @@ require (
 )
 
 require (
-	gi
+	github.
