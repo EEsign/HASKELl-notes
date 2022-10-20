@@ -10,4 +10,4 @@ require (
 )
 
 require (
-	github.com/dave
+	github.com/davecgh/go-sp
