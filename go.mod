@@ -11,4 +11,4 @@ require (
 
 require (
 	github.com/davecgh/go-spew v1.1.1 // indirect
-	github.com/google
+	github.com/google/gofu
