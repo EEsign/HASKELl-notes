@@ -12,4 +12,4 @@ require (
 require (
 	github.com/davecgh/go-spew v1.1.1 // indirect
 	github.com/google/gofuzz v1.2.0 // indirect
-	github.com/kr/text v0.2
+	github.com/kr/text v0.2.0 // i
