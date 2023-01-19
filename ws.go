@@ -30,3 +30,14 @@ const (
 	MsgTypeSubscribed   MsgType = "subscribed"
 	MsgTypeUnsubscribed MsgType = "unsubscribed"
 	MsgTypeOrder        MsgType = "ordered"
+
+	MsgTypeUpdate MsgType = "update" // 数据更新
+)
+
+type Operation string
+type Channel string
+type MsgType string
+
+type ReqMessage struct {
+	Id      uint64      `json:"id"`      // 请求ID
+	Op      Operation   `json:"op"`      // 操作
