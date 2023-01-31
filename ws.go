@@ -48,3 +48,11 @@ type ReqMessage struct {
 type RespMessage struct {
 	Id      uint64          `json:"id,omitempty"`
 	Type    MsgType         `json:"type"`    // 消息类型
+	Channel Channel         `json:"channel"` // 频道
+	Data    json.RawMessage `json:"data"`    // 数据
+}
+
+type ConfirmMessage struct {
+	RespMessage
+	Data ConfirmData `json:"data"`
+}
