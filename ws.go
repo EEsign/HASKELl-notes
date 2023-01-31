@@ -56,3 +56,9 @@ type ConfirmMessage struct {
 	RespMessage
 	Data ConfirmData `json:"data"`
 }
+
+func (confirm ConfirmMessage) IsSuccess() bool {
+	return confirm.Data.Code == 0
+}
+
+type PairArgs []string
