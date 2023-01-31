@@ -41,3 +41,10 @@ type MsgType string
 type ReqMessage struct {
 	Id      uint64      `json:"id"`      // 请求ID
 	Op      Operation   `json:"op"`      // 操作
+	Channel Channel     `json:"channel"` // 频道
+	Args    interface{} `json:"args"`    // 参数
+}
+
+type RespMessage struct {
+	Id      uint64          `json:"id,omitempty"`
+	Type    MsgType         `json:"type"`    // 消息类型
