@@ -62,3 +62,13 @@ func (confirm ConfirmMessage) IsSuccess() bool {
 }
 
 type PairArgs []string
+
+type OrderArgs struct {
+	Pair              string          `json:"pair" validate:"required"`
+	Type              string          `json:"type" validate:"required"`
+	TokenSymbolIn     string          `json:"tokenSymbolIn" validate:"required"`
+	AmountIn          decimal.Decimal `json:"amountIn" validate:"required"`
+	AmountOutMin      decimal.Decimal `json:"amountOutMin" validate:"required"`
+	GasPriceMax       decimal.Decimal `json:"gasPriceMax" validate:"required"`
+	TargetBlockNumber uint64          `json:"targetBlockNumber" validate:"required"`
+}
