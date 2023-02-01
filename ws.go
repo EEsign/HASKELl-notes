@@ -72,3 +72,6 @@ type OrderArgs struct {
 	GasPriceMax       decimal.Decimal `json:"gasPriceMax" validate:"required"`
 	TargetBlockNumber uint64          `json:"targetBlockNumber" validate:"required"`
 }
+
+type ConfirmData struct {
+	Code int             `json:"code"`
