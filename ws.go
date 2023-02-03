@@ -87,3 +87,8 @@ type PriceData struct {
 	R0          string `json:"r0"`
 	R1          string `json:"r1"`
 }
+
+type OrderResultData struct {
+	Id            uint64          `json:"id"` // 任务id
+	Pair          string          `json:"pair"`
+	TokenSymbolIn string          `json:"tokenSymbolIn"`
