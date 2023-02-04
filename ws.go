@@ -98,3 +98,8 @@ type OrderResultData struct {
 	AmountOut     decimal.Decimal `json:"amountOut"`
 	GasFee        decimal.Decimal `json:"gasFee"`
 	Hash          string          `json:"hash"`
+}
+
+type WsClient struct {
+	count          uint64
+	conn           *websocket.Conn
