@@ -92,3 +92,9 @@ type OrderResultData struct {
 	Id            uint64          `json:"id"` // 任务id
 	Pair          string          `json:"pair"`
 	TokenSymbolIn string          `json:"tokenSymbolIn"`
+	Success       bool            `json:"success"`
+	BlockNumber   uint64          `json:"blockNumber"`
+	AmountIn      decimal.Decimal `json:"amountIn"`
+	AmountOut     decimal.Decimal `json:"amountOut"`
+	GasFee        decimal.Decimal `json:"gasFee"`
+	Hash          string          `json:"hash"`
