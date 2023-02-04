@@ -103,3 +103,15 @@ type OrderResultData struct {
 type WsClient struct {
 	count          uint64
 	conn           *websocket.Conn
+	send           chan *ReqMessage
+	Closed         chan struct{}
+	closedOnce     sync.Once
+	messageHandler MessageHandler
+	callbacks      map[uint64]Callback
+	callbackMutex  sync.Mutex
+	Logger         Logger
+}
+
+func NewWsClient(conn *websocket.Conn, logger Logger) *WsClient {
+	client := &WsClient{
+		conn:           conn,
