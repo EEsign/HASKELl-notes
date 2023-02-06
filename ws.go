@@ -115,3 +115,8 @@ type WsClient struct {
 func NewWsClient(conn *websocket.Conn, logger Logger) *WsClient {
 	client := &WsClient{
 		conn:           conn,
+		send:           make(chan *ReqMessage, clientSendChanBuffer),
+		Closed:         make(chan struct{}),
+		messageHandler: nil,
+		callbacks:      make(map[uint64]Callback),
+		Logger:         logger,
