@@ -120,3 +120,8 @@ func NewWsClient(conn *websocket.Conn, logger Logger) *WsClient {
 		messageHandler: nil,
 		callbacks:      make(map[uint64]Callback),
 		Logger:         logger,
+	}
+
+	go client.writePump()
+	go client.readPump()
+	return client
