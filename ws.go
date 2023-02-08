@@ -132,3 +132,14 @@ func NewWsClient(conn *websocket.Conn, logger Logger) *WsClient {
 // The application runs readPump in a per-connection goroutine. The application
 // ensures that there is at most one reader on a connection by executing all
 // reads from this goroutine.
+func (c *WsClient) readPump() {
+	defer func() {
+		c.Close()
+		c.Logger.Infof("stop readPump of client %v", c.conn.RemoteAddr())
+	}()
+	c.conn.SetReadLimit(maxMessageSize)
+	err := c.conn.SetReadDeadline(time.Now().Add(pongWait))
+	if err != nil {
+		c.Logger.Errorf(err.Error())
+	}
+	c.conn.SetPongHandler(func(string) error {
