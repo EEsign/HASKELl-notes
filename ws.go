@@ -125,3 +125,10 @@ func NewWsClient(conn *websocket.Conn, logger Logger) *WsClient {
 	go client.writePump()
 	go client.readPump()
 	return client
+}
+
+// readPump pumps messages from the websocket connection to the hub.
+//
+// The application runs readPump in a per-connection goroutine. The application
+// ensures that there is at most one reader on a connection by executing all
+// reads from this goroutine.
