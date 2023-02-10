@@ -149,3 +149,8 @@ func (c *WsClient) readPump() {
 	for {
 		_, message, err := c.conn.ReadMessage()
 		if err != nil {
+			if websocket.IsUnexpectedCloseError(err, websocket.CloseNormalClosure, websocket.CloseGoingAway, websocket.CloseAbnormalClosure) {
+				c.Logger.Infof("websocket read message error: %v", err)
+			}
+			break
+		}
