@@ -143,3 +143,9 @@ func (c *WsClient) readPump() {
 		c.Logger.Errorf(err.Error())
 	}
 	c.conn.SetPongHandler(func(string) error {
+		c.Logger.Infof("received pong message from peer")
+		return c.conn.SetReadDeadline(time.Now().Add(pongWait))
+	})
+	for {
+		_, message, err := c.conn.ReadMessage()
+		if err != nil {
