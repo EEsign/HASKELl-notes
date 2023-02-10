@@ -154,3 +154,7 @@ func (c *WsClient) readPump() {
 			}
 			break
 		}
+		var respMessage RespMessage
+		if err := json.Unmarshal(message, &respMessage); err != nil {
+			c.Logger.Errorf("unmarshal reqMessage error: %v", err)
+			continue
