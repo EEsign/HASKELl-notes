@@ -161,3 +161,8 @@ func (c *WsClient) readPump() {
 		}
 		if respMessage.Id != 0 {
 			c.callbackMutex.Lock()
+			callback := c.callbacks[respMessage.Id]
+			delete(c.callbacks, respMessage.Id)
+			c.callbackMutex.Unlock()
+			if callback != nil && respMessage.Type != MsgTypeUpdate {
+				confirm := ConfirmData{}
