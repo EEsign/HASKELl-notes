@@ -166,3 +166,10 @@ func (c *WsClient) readPump() {
 			c.callbackMutex.Unlock()
 			if callback != nil && respMessage.Type != MsgTypeUpdate {
 				confirm := ConfirmData{}
+				if err = json.Unmarshal(respMessage.Data, &confirm); err != nil {
+					c.Logger.Errorf(err.Error())
+					continue
+				}
+				callback(ConfirmMessage{
+					RespMessage: respMessage,
+					Data:        confirm,
