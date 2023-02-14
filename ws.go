@@ -173,3 +173,10 @@ func (c *WsClient) readPump() {
 				callback(ConfirmMessage{
 					RespMessage: respMessage,
 					Data:        confirm,
+				})
+			}
+		}
+		handler := c.messageHandler
+		if handler == nil {
+			// can't handle message with this type
+			continue
