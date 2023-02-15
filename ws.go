@@ -206,3 +206,10 @@ func (c *WsClient) writePump() {
 				c.conn.WriteMessage(websocket.CloseMessage, []byte{})
 				return
 			}
+
+			w, err := c.conn.NextWriter(websocket.TextMessage)
+			if err != nil {
+				c.Logger.Errorf("get next writer error: %v", err)
+				return
+			}
+			messageBytes, err := json.Marshal(message)
