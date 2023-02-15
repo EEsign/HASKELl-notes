@@ -180,3 +180,10 @@ func (c *WsClient) readPump() {
 		if handler == nil {
 			// can't handle message with this type
 			continue
+		}
+
+		err = handler(c, &respMessage)
+		if err != nil {
+			c.Logger.Errorf("handle message error: %v", err)
+			continue
+		}
