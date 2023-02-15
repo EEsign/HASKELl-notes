@@ -195,3 +195,8 @@ func (c *WsClient) writePump() {
 	defer func() {
 		ticker.Stop()
 		c.Close()
+		c.Logger.Infof("stop writePump of client %v", c.conn.RemoteAddr())
+	}()
+	for {
+		select {
+		case message, ok := <-c.send:
