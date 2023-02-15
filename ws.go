@@ -219,3 +219,10 @@ func (c *WsClient) writePump() {
 			}
 			nn, err := w.Write(messageBytes)
 			if err != nil || nn != len(messageBytes) {
+				c.Logger.Errorf("writer of client write error: %v", err)
+				return
+			}
+
+			if err := w.Close(); err != nil {
+				c.Logger.Errorf("close writer of client error: %v", err)
+				return
