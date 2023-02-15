@@ -187,3 +187,11 @@ func (c *WsClient) readPump() {
 			c.Logger.Errorf("handle message error: %v", err)
 			continue
 		}
+	}
+}
+
+func (c *WsClient) writePump() {
+	ticker := time.NewTicker(pingPeriod)
+	defer func() {
+		ticker.Stop()
+		c.Close()
