@@ -213,3 +213,9 @@ func (c *WsClient) writePump() {
 				return
 			}
 			messageBytes, err := json.Marshal(message)
+			if err != nil {
+				c.Logger.Errorf(err.Error())
+				continue
+			}
+			nn, err := w.Write(messageBytes)
+			if err != nil || nn != len(messageBytes) {
