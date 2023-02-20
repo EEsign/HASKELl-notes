@@ -226,3 +226,16 @@ func (c *WsClient) writePump() {
 			if err := w.Close(); err != nil {
 				c.Logger.Errorf("close writer of client error: %v", err)
 				return
+			}
+		case <-ticker.C:
+			c.conn.SetWriteDeadline(time.Now().Add(writeWait))
+			if err := c.conn.WriteMessage(websocket.PingMessage, nil); err != nil {
+				return
+			}
+		case <-c.Closed:
+			return
+		}
+	}
+}
+
+func (c *WsClient) Close() {
