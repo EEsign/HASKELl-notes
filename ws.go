@@ -239,3 +239,12 @@ func (c *WsClient) writePump() {
 }
 
 func (c *WsClient) Close() {
+	c.conn.Close()
+	c.setClose()
+}
+
+func (c *WsClient) setClose() {
+	c.closedOnce.Do(func() {
+		close(c.Closed)
+	})
+}
