@@ -248,3 +248,12 @@ func (c *WsClient) setClose() {
 		close(c.Closed)
 	})
 }
+
+func (c *WsClient) IsClosed() bool {
+	select {
+	case <-c.Closed:
+		return true
+	default:
+		return false
+	}
+}
