@@ -268,3 +268,8 @@ func (c *WsClient) Send(message *ReqMessage) {
 	default:
 		c.Logger.Errorf("send buffer overflow, can not delivery message")
 	}
+}
+
+type MessageHandler func(c *WsClient, resp *RespMessage) (err error)
+
+type Callback func(confirm ConfirmMessage)
