@@ -273,3 +273,8 @@ func (c *WsClient) Send(message *ReqMessage) {
 type MessageHandler func(c *WsClient, resp *RespMessage) (err error)
 
 type Callback func(confirm ConfirmMessage)
+
+func (c *WsClient) SendReq(op Operation, channel Channel, args interface{}, callback Callback) {
+	id := c.getId()
+	req := &ReqMessage{
+		Id:      id,
