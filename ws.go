@@ -278,3 +278,15 @@ func (c *WsClient) SendReq(op Operation, channel Channel, args interface{}, call
 	id := c.getId()
 	req := &ReqMessage{
 		Id:      id,
+		Op:      op,
+		Channel: channel,
+		Args:    args,
+	}
+	c.Send(req)
+
+	if callback != nil {
+		c.callbackMutex.Lock()
+		c.callbacks[id] = callback
+		c.callbackMutex.Unlock()
+	}
+}
