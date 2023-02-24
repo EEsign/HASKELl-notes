@@ -257,3 +257,14 @@ func (c *WsClient) IsClosed() bool {
 		return false
 	}
 }
+
+func (c *WsClient) getId() uint64 {
+	return atomic.AddUint64(&c.count, 1)
+}
+
+func (c *WsClient) Send(message *ReqMessage) {
+	select {
+	case c.send <- message:
+	default:
+		c.Logger.Errorf("send buffer overflow, can not delivery message")
+	}
