@@ -290,3 +290,10 @@ func (c *WsClient) SendReq(op Operation, channel Channel, args interface{}, call
 		c.callbackMutex.Unlock()
 	}
 }
+
+func (c *WsClient) SendReqAndWait(op Operation, channel Channel, args interface{}) (confirm *ConfirmData, err error) {
+	completed := make(chan struct{})
+	timeout := time.After(5 * time.Second)
+	result := ConfirmMessage{}
+	callback := func(confirm ConfirmMessage) {
+		result = confirm
