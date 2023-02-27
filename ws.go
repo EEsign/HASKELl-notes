@@ -297,3 +297,17 @@ func (c *WsClient) SendReqAndWait(op Operation, channel Channel, args interface{
 	result := ConfirmMessage{}
 	callback := func(confirm ConfirmMessage) {
 		result = confirm
+		close(completed)
+	}
+	c.SendReq(op, channel, args, callback)
+	select {
+	case <-completed:
+		if result.IsSuccess() {
+			return &result.Data, nil
+		} else {
+			return confirm, fmt.Errorf("action failed: %v", result.Data.Msg)
+		}
+	case <-timeout:
+		return confirm, errors.New("action failed: timeout")
+	}
+}
